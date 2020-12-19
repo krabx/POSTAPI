@@ -16,12 +16,10 @@ foreach ($json_parc as $arr) {
     }
 }
 $database = mysqli_connect('localhost:3306', 'bogdan', 'Lost1996!', 'finhub');
-
 if (!empty(($_POST['key_id']) && ($_POST['currency_pair']) && ($_POST['timeframe']))){
     ($key_id = $_POST['key_id']);
     $currency_pair = $_POST['currency_pair'];
     $timeframe = $_POST['timeframe'];
-
     $fin_var = file_get_contents("https://api.binance.com/api/v3/klines?symbol=$currency_pair&interval=$timeframe&limit=1");
     $arr = json_decode($fin_var);
     $last_price = (array_pop($arr)[4]);
