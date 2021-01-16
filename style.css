@@ -33,3 +33,8 @@
     margin: auto; 
     max-width: 218px;
 }
+
+#returnAjax {
+  width: 642px;
+  margin: auto;
+}

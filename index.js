@@ -1,4 +1,5 @@
             let button = $('#button')
+
             let keyId = $('#key_id')
             let currencyPair = $('#currency_pair')
             let dualRing = $('.lds-dual-ring')
@@ -22,6 +23,10 @@
                             data: data,
                             beforeSend: function(){
                                 dualRing.show()
+                                if (returnAjax.val !== ''){
+                                    returnAjax.empty()
+                                    returnAjax.removeClass('alert alert-secondary')
+                                }
                             },
                             success: function (res){
                                 returnAjax.addClass("alert alert-secondary")
@@ -35,4 +40,5 @@
                             },
                         })
                         e.preventDefault()
+
                     })

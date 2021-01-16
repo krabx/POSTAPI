@@ -18,7 +18,7 @@
                 <input  class="form-control" type="text" id="key_id" name="key_id" value="" required>
             </label>
             <label for="currency_pair">Выберите валютную пару<br>
-                <input id="currency_pair" type="text" placeholder="Поиск" list="search" class="btn btn-secondary dropdown-toggle" name="currency_pair" required>
+                <input id="currency_pair" type="text" placeholder="Поиск" list="search" name="currency_pair" class="form-control" required>
                     <datalist id="search">
                         <?php foreach ($result as $v)
                         echo "<option value='$v' name='currency_pair'>$v</option>" ?>
@@ -45,7 +45,7 @@
             <button id="button" name="button" class="btn btn-secondary" disabled>Запросить</button>
         </form>
     <div class="lds-dual-ring"></div>
-    <div id="returnAjax" class="text-center" style="width: 642px; margin: auto;"></div>
+    <div id="returnAjax" class="text-center"></div>
     <script src="index.js"></script>
 </body>
 </html>
