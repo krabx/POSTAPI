@@ -1,4 +1,5 @@
 <?php
+require_once ('dbconnect.php');
 error_reporting(0);
 $info = file_get_contents('https://api.binance.com/api/v3/exchangeInfo');
 $json_parc = json_decode($info);
@@ -15,7 +16,6 @@ foreach ($json_parc as $arr) {
         }
     }
 }
-$database = mysqli_connect('localhost:3306', 'bogdan', 'Lost1996!', 'finhub');
 if (!empty(($_POST['key_id']) && ($_POST['currency_pair']) && ($_POST['timeframe']))){
     ($key_id = $_POST['key_id']);
     $currency_pair = $_POST['currency_pair'];
